@@ -1,4 +1,6 @@
-## Open Source Ethereum Mining Pool
+## Work in progress. Please do not use in production
+
+## Open Source Ethereum/Ethereum Classic Mining Pool
 
 ![Miner's stats page](https://user-images.githubusercontent.com/7374093/31591180-43c72364-b236-11e7-8d47-726cd66b876a.png)
 

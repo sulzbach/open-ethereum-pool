@@ -3,6 +3,12 @@
 	"coin": "eth",
 	"name": "main",
 
+	"telegram": {
+		"enabled": false,
+		"api": "BOT_SECRET_KEY",
+		"chat": CHAT_ID
+	},
+
 	"proxy": {
 		"enabled": true,
 		"listen": "0.0.0.0:8888",

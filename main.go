@@ -13,6 +13,7 @@ import (
 
 	"github.com/yvasiyarov/gorelic"
 
+	"github.com/sammy007/open-ethereum-pool/alerts"
 	"github.com/sammy007/open-ethereum-pool/api"
 	"github.com/sammy007/open-ethereum-pool/payouts"
 	"github.com/sammy007/open-ethereum-pool/proxy"
@@ -21,6 +22,7 @@ import (
 
 var cfg proxy.Config
 var backend *storage.RedisClient
+var bot *alerts.TelegramBot
 
 func startProxy() {
 	s := proxy.NewProxy(&cfg, backend)
@@ -78,6 +80,10 @@ func main() {
 	if cfg.Threads > 0 {
 		runtime.GOMAXPROCS(cfg.Threads)
 		log.Printf("Running with %v threads", cfg.Threads)
+	}
+
+	if cfg.Telegram.Enabled {
+		bot := alerts.NewTelegramBot(&cfg.Telegram)
 	}
 
 	startNewrelic()

@@ -1,6 +1,7 @@
 package proxy
 
 import (
+	"github.com/sammy007/open-ethereum-pool/alerts"
 	"github.com/sammy007/open-ethereum-pool/api"
 	"github.com/sammy007/open-ethereum-pool/payouts"
 	"github.com/sammy007/open-ethereum-pool/policy"
@@ -21,6 +22,7 @@ type Config struct {
 
 	BlockUnlocker payouts.UnlockerConfig `json:"unlocker"`
 	Payouts       payouts.PayoutsConfig  `json:"payouts"`
+	Telegram      alerts.TelegramConfig  `json:"telegram"`
 
 	NewrelicName    string `json:"newrelicName"`
 	NewrelicKey     string `json:"newrelicKey"`
